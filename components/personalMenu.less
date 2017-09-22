@@ -2,7 +2,7 @@
 #p-personal {
 	position: absolute;
 	top: 0.33em;
-	right: 0.75em;
+	right: 2em;
 	/* Display on top of page tabs - bugs 37158, 48078 */
 	z-index: 100;
 
@@ -11,33 +11,34 @@
 	}
 
 	ul {
-		list-style-type: none;
-		list-style-image: none;
-		margin: 0;
-		padding-left: 10em; /* Keep from overlapping logo */
+		list-style: none;
+//		margin: 0;
+//		padding-left: 10em; /* Keep from overlapping logo */
 	}
 
 	li {
 		line-height: 1.125em;
 		/* @noflip */
-		float: left;
-		margin-left: 0.75em;
-		margin-top: 0.5em;
-		font-size: @menu-personal-font-size;
+	//	float: left;
+	//	margin-left: 0.75em;
+	//	margin-top: 0.5em;
+		font-size: 0.92em;
+		//font-size: 0.94em; <- this works, the items have smaller font than the title, but they are not whole numbers, eg 14.4px.
+	 	// font-size: 0.9rem; <- this works but then the dropdown title and items are teh same size font-size: @menu-personal-font-size;
 		white-space: nowrap;
 	}
 }
 
-/* Icon for Usernames */
-#pt-userpage,
-#pt-anonuserpage {
-	background-position: left top;
-	background-repeat: no-repeat;
-	/* SVG support using a transparent gradient to guarantee cross-browser
-	 * compatibility (browsers able to understand gradient syntax support also SVG) */
-	.background-image-svg('images/user-icon.svg', 'images/user-icon.png');
-	padding-left: 15px !important; // stylelint-disable-line declaration-no-important
-}
+/* Icon for Usernames  I do not need this, I have my own icon */
+// #pt-userpage,
+// #pt-anonuserpage {
+// 	background-position: left top;
+// 	background-repeat: no-repeat;
+// 	/* SVG support using a transparent gradient to guarantee cross-browser
+// 	 * compatibility (browsers able to understand gradient syntax support also SVG) */
+// 	.background-image-svg('images/user-icon.svg', 'images/user-icon.png');
+// 	padding-left: 15px !important;
+// }
 
 /* Show "Not logged in" text in gray */
 #pt-anonuserpage {

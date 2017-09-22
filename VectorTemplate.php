@@ -68,8 +68,65 @@ class VectorTemplate extends BaseTemplate {
 		?>
 		<div id="mw-page-base" class="noprint"></div>
 		<div id="mw-head-base" class="noprint"></div>
+
+	<header>
+        <div class="main-header">
+            <div class="main-header-wrapper">
+                <a class="logo" href="#"><img class="large_logo" alt="ex_logo" data-fallback="png_logo.png" src=""></a>
+                <nav class="main-header__navigation" role="navigation">
+
+                    <ul class="navigation__menu">
+                        <li class="menu__item menu-top">
+                            <a href="#">MetaGame</a>
+							<ul class="momo">
+								<li>
+									<a>Han Solo</a>
+								</li>
+								<li>
+									<a>Chewbacca</a>
+								</li>
+								<li>
+									<a>Luke Skywalker</a>
+								</li>
+								<li>
+									<a>Leia Amadala</a>
+								</li>
+								<li>
+									<a>Obi-Wan Kenobi</a>
+								</li>
+							</ul>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#">Game</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#">Strategy</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#">Performance</a>
+                        </li>
+						<li style="padding-left: 20px;" class="menu__item">
+                            <a href="http://127.0.0.1/wooper">Video</a>
+                        </li>
+                    </ul>
+                </nav>
+				<?php $this->renderNavigation( 'PERSONAL' ); ?>	
+
+				<?php $this->renderNavigation( [ 'SEARCH' ] ); ?>
+                <div class="search-bar" role="search">
+                    </div>
+
+                </div>
+            </div>
+	</header>
+		
+		
+
 		<div id="content" class="mw-body" role="main">
-			<a id="top"></a>
+
+		<div id="right-navigation"> 
+				<?php $this->renderNavigation( [ 'VIEWS', 'ACTIONS' ] ); ?>
+			</div>
 
 			<?php
 			if ( $this->data['sitenotice'] ) {
@@ -146,20 +203,7 @@ class VectorTemplate extends BaseTemplate {
 				<?php $this->html( 'debughtml' ); ?>
 			</div>
 		</div>
-		<div id="mw-navigation">
-			<h2><?php $this->msg( 'navigation-heading' ) ?></h2>
-
-			<div id="mw-head">
-				<?php $this->renderNavigation( 'PERSONAL' ); ?>
-				<div id="left-navigation">
-					<?php $this->renderNavigation( [ 'NAMESPACES', 'VARIANTS' ] ); ?>
-				</div>
-				<div id="right-navigation">
-					<?php $this->renderNavigation( [ 'VIEWS', 'ACTIONS', 'SEARCH' ] ); ?>
-				</div>
-			</div>
-			// nuked mediawiki panel xd
-		</div>
+		
 		<div id="footer" role="contentinfo"<?php $this->html( 'userlangattributes' ) ?>>
 			<?php
 			foreach ( $this->getFooterLinks() as $category => $links ) {
