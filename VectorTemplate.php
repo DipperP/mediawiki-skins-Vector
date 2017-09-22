@@ -35,8 +35,7 @@ class VectorTemplate extends BaseTemplate {
 	public function execute() {
 		$this->data['namespace_urls'] = $this->data['content_navigation']['namespaces'];
 		$this->data['view_urls'] = $this->data['content_navigation']['views'];
-		$this->data['view_urls'] .= $this->data['content_navigation']['actions'];
-		//$this->data['action_urls'] = $this->data['content_navigation']['actions'];
+		$this->data['action_urls'] = $this->data['content_navigation']['actions'];
 		$this->data['variant_urls'] = $this->data['content_navigation']['variants'];
 
 		// Move the watch/unwatch star outside of the collapsed "actions" menu to the main "views" menu
@@ -45,9 +44,9 @@ class VectorTemplate extends BaseTemplate {
 				? 'unwatch'
 				: 'watch';
 
-			// if ( isset( $this->data['action_urls'][$mode] ) ) {
-			// 	$this->data['view_urls'][$mode] = $this->data['action_urls'][$mode];
-			// 	unset( $this->data['action_urls'][$mode] );
+			if ( isset( $this->data['action_urls'][$mode] ) ) {
+				$this->data['view_urls'][$mode] = $this->data['action_urls'][$mode];
+				unset( $this->data['action_urls'][$mode] );
 			}
 		}
 
@@ -203,25 +202,7 @@ class VectorTemplate extends BaseTemplate {
 						</div>
 					</div> <!-- end mw-body -->
 				<div class="side-mod">
-					<div id="right-navigation"> 
-						<?php $this->renderNavigation( [ 'VIEWS', 'ACTIONS' ] ); ?>
-					</div>
-
-						<div class="edit-dropdown" role="navigation" aria-labelledby="p-views-label">
-						<a class="edit-button" href="google.com">
-							Edit
-						</a>
-								<!-- <h3 id="p-views-label">Views</h3> -->
-							<ul class="momo">
-								<li id="ca-edit" class=""><span><a href="action=edit" title="Edit this page [alt-shift-e]" accesskey="e">Edit</a></span></li>
-								<li id="ca-history" class="collapsible"><span><a href="&amp;action=history" title="Past revisions of this page [alt-shift-h]" accesskey="h">View history</a></span></li>
-								<li id="ca-unwatch" class="icon mw-watchlink"><span><a href="action=unwatch" title="Remove this page from your watchlist [alt-shift-w]" accesskey="w">Unwatch</a></span></li>
-								<li id="ca-delete"><span><a href="action=delete" title="Delete this page [alt-shift-d]" accesskey="d">Delete</a></span></li>
-								<li id="ca-move"><span><a href="" title="Move this page [alt-shift-m]" accesskey="m">Move</a></span></li>
-								<li id="ca-protect"><span><a href="action=protect" title="Protect this page [alt-shift-=]" accesskey="=">Protect</a></span></li>
-							</ul>
-						</div>
-						
+						<?php $this->renderNavigation( [ 'VIEWS' ] ); ?>
 
 						<div id="rightSide">
 									<h1>로그인</h1>
@@ -460,47 +441,37 @@ class VectorTemplate extends BaseTemplate {
 					</div>
 					<?php
 					break;
+
+
+					
 				case 'VIEWS':
+				$readEdit = array();
+					foreach ( $this->data['view_urls'] as $key => $item ) {
+						$readEdit[] = $this->makeListItem( $key, $item, [  // key = unwatch, edit
+							'vector-wrap' => true
+							//'vector-collapsible' => true,
+							] ) . "\n";
+						}
 					?>
-					<div id="p-views" role="navigation" class="vectorTabs<?php
+					<div class="edit-dropdown" role="navigation"<?php
 					if ( count( $this->data['view_urls'] ) == 0 ) {
 						echo ' emptyPortlet';
 					}
 					?>" aria-labelledby="p-views-label">
-						<h3 id="p-views-label"><?php $this->msg( 'views' ) ?></h3>
-						<ul<?php $this->html( 'userlangattributes' ) ?>>
+					
+					<?= $readEdit[0] . $readEdit[1] ?>
+
+					<ul class="momo"<?php $this->html( 'userlangattributes' ) ?>>
 							<?php
-							foreach ( $this->data['view_urls'] as $key => $item ) {
-								echo "\t\t\t\t\t\t\t" . $this->makeListItem( $key, $item, [
-									'vector-wrap' => true,
-									'vector-collapsible' => true,
-								] ) . "\n";
+							$viewsNum = count($readEdit);
+							for ($ii = 2; $ii < $viewsNum; $ii++) {
+							echo $readEdit[$ii]; // views array variable length
+							}
+							foreach ( $this->data['action_urls'] as $key => $item ) {
+								echo "\t\t\t\t\t\t\t\t" . $this->makeListItem( $key, $item ) . "\n";
 							}
 							?>
 						</ul>
-					</div>
-					<?php
-					break;
-				case 'ACTIONS':
-					?>
-					<div id="p-cactions" role="navigation" class="vectorMenu<?php
-					if ( count( $this->data['action_urls'] ) == 0 ) {
-						echo ' emptyPortlet';
-					}
-					?>" aria-labelledby="p-cactions-label">
-						<h3 id="p-cactions-label"><span><?php
-							$this->msg( 'vector-more-actions' )
-						?></span></h3>
-
-						<div class="menu">
-							<ul<?php $this->html( 'userlangattributes' ) ?>>
-								<?php
-								foreach ( $this->data['action_urls'] as $key => $item ) {
-									echo "\t\t\t\t\t\t\t\t" . $this->makeListItem( $key, $item ) . "\n";
-								}
-								?>
-							</ul>
-						</div>
 					</div>
 					<?php
 					break;
