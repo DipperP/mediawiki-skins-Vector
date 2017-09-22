@@ -70,7 +70,7 @@ class VectorTemplate extends BaseTemplate {
 	<header>
         <div class="main-header">
             <div class="main-header-wrapper">
-	            //<a class="logo" href="#"><img class="large_logo" alt="ex_logo" data-fallback="png_logo.png" src=""></a>
+	            <!-- <a class="logo" href="#"><img class="large_logo" alt="ex_logo" data-fallback="png_logo.png" src=""></a> -->
                 <nav class="main-header__navigation" role="navigation">
 
                     <ul class="navigation__menu">
