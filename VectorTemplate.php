@@ -209,45 +209,46 @@ class VectorTemplate extends BaseTemplate {
 			</div>
 		</div>
 	</div> <!-- end wrapcontainr -->
-		
-	<div id="footer" role="contentinfo"<?php $this->html( 'userlangattributes' ) ?>>
-		<?php
-		foreach ( $this->getFooterLinks() as $category => $links ) {
-			?>
-			<ul id="footer-<?php echo $category ?>">
-				<?php
-				foreach ( $links as $link ) {
-					?>
-					<li id="footer-<?php echo $category ?>-<?php echo $link ?>"><?php $this->html( $link ) ?></li>
-				<?php
-				}
+	<div class="footerwrap">	
+		<div id="footer" role="contentinfo"<?php $this->html( 'userlangattributes' ) ?>>
+			<?php
+			foreach ( $this->getFooterLinks() as $category => $links ) {
 				?>
-			</ul>
-		<?php
-		}
-		?>
-		<?php $footericons = $this->getFooterIcons( 'icononly' );
-		if ( count( $footericons ) > 0 ) {
-			?>
-			<ul id="footer-icons" class="noprint">
-				<?php
-				foreach ( $footericons as $blockName => $footerIcons ) {
-					?>
-					<li id="footer-<?php echo htmlspecialchars( $blockName ); ?>ico">
-						<?php
-						foreach ( $footerIcons as $icon ) {
-							echo $this->getSkin()->makeFooterIcon( $icon );
-						}
+				<ul id="footer-<?php echo $category ?>">
+					<?php
+					foreach ( $links as $link ) {
 						?>
-					</li>
-				<?php
-				}
+						<li id="footer-<?php echo $category ?>-<?php echo $link ?>"><?php $this->html( $link ) ?></li>
+					<?php
+					}
+					?>
+				</ul>
+			<?php
+			}
+			?>
+			<?php $footericons = $this->getFooterIcons( 'icononly' );
+			if ( count( $footericons ) > 0 ) {
 				?>
-			</ul>
-		<?php
-		}
-		?>
-		<div style="clear:both"></div>
+				<ul id="footer-icons" class="noprint">
+					<?php
+					foreach ( $footericons as $blockName => $footerIcons ) {
+						?>
+						<li id="footer-<?php echo htmlspecialchars( $blockName ); ?>ico">
+							<?php
+							foreach ( $footerIcons as $icon ) {
+								echo $this->getSkin()->makeFooterIcon( $icon );
+							}
+							?>
+						</li>
+					<?php
+					}
+					?>
+				</ul>
+			<?php
+			}
+			?>
+			<div style="clear:both"></div>
+		</div>
 	</div>
 	<?php $this->printTrail(); ?>
 
