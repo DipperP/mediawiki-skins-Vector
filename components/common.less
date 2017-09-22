@@ -9,6 +9,171 @@
  * the child selector. You can spot this by looking for the "OVERRIDDEN BY COMPLIANT BROWSERS" and
  * "IGNORED BY IE6" comments.
  */
+
+ /* Local model styles */
+ 
+ .bgRight {
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 50%;
+	height: 100%;
+	background: #eef2f5;
+	z-index: -10;
+}
+.containr::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+body {
+	background-color: #fff !important;
+}	
+
+.selected {
+    border-bottom: 1px solid orange;
+}
+
+#toc {
+    position: absolute;
+    right: -26em;
+    top: -4em;
+    border: none;
+    background-color: #f0efef;
+    display: none;
+}
+
+#toctitle {
+    text-align: left !important;
+    display: none;
+}
+
+.toctext {
+    color: #282828;
+}
+
+.tocnumber {
+    color: #b8b8b8;
+}
+
+.main-header .main-header__navigation {
+    margin-left: 12em !important;
+}
+
+li.menu__item.menu-top {
+    width: initial !important;
+}
+
+.menu__item {
+    padding: 0 1em;
+}
+
+.edit-dropdown {
+    display: inline-block;
+}
+
+.edit-button {
+    display: block; /* This makes containing div expand to the size, padding of this */
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+    padding: 6px 26px;
+   /* padding: 6px 16px; */
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    background-color: lightgreen;
+}
+
+.edit-dropdown:hover ul.momo {
+    display: block;
+    left: initial;
+    top: initial;
+}
+
+.generic-dropdown {
+    display: none;
+    padding: 7px 0;
+    margin: 0;
+    list-style: none;
+}
+ 
+html {
+    font-size: 93.75% !important;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 15px;
+    color:  #161616 !important;
+    padding: 0;
+    margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    color:  #161616 !important;
+    font-family: 'Open Sans', sans-serif !important;
+    line-height: 1.4 !important;
+    margin-bottom: 8px !important;
+    padding: 0;
+}
+h1 { 
+    font-size: 2.3rem !important;
+    font-weight: 600 !important;
+    padding-bottom: 12px !important;
+   /* margin-top: 0 !important; */
+    border-bottom: 1px solid #e8e8e8;
+}
+h2 {  
+    font-size: 1.8rem !important;
+    font-weight: 600 !important;
+    border: none;
+    /* border-bottom: 1px solid #e8e8e8; */
+    margin-top: 30px !important;
+}
+h2 + h3 {
+    margin-top: 16px !important;
+}
+h3 {
+    font-size: 1.5rem !important;
+    margin-top: 16px !important;
+}
+h4 {
+    font-size: 1.25rem !important;
+    margin-top: 16px !important;
+}
+h5, h6 {
+    margin-top: 16px !important;
+}
+
+h3, h4 {
+    font-weight: 600 !important; 
+}
+h2:hover a, h3:hover a, h4:hover a, h5:hover a, h6:hover a {
+    display: inline-block;
+}
+
+h2 a, h3 a, h4 a, h5 a, h6 a {
+   /* float: right; */
+    margin-left: 20px;
+    margin-right: 4px;
+    cursor: pointer;
+    display: none;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    /* background-color: #fff; */
+    position: relative;
+}
+h2 a { padding: 11px; top: 1.5px }
+h3 a { padding: 10px; top: 2px }
+h4 a { padding: 8px; top: 1px }
+h5 a { padding: 6px; top: 2.2px }
+h6 a { padding: 6px; top: 2.2px }
+
+
+
+
 @import "mediawiki.mixins";
 
 /* Framework */

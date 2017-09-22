@@ -118,7 +118,7 @@ class VectorTemplate extends BaseTemplate {
             </div>
 	</header>
 		
-		
+		<div class="bgRight"> </div>
 
 		<div id="content" class="mw-body" role="main">
 
