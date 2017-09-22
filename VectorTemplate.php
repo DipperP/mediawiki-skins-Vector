@@ -471,7 +471,7 @@ class VectorTemplate extends BaseTemplate {
 						<div id="user-profile">
    	 						<img class="user-logo" src="http://images.battlecomics.co.kr/page/avatar_default.jpg" alt="Avatar default">
 						</div>
-						<div clcase 'PERSONAL':ass="user-menu">
+						<div class="user-menu">
 							<div class="user-menu__avatar">
 								<img src="http://images.battlecomics.co.kr/page/avatar_default.jpg" alt="Avatar default">
 							</div>
