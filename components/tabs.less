@@ -1,210 +1,203 @@
-/*
-Styling for namespace tabs (page, discussion) and views (read, edit, view history, watch and other actions)
-*/
+// /*
+// Styling for namespace tabs (page, discussion) and views (read, edit, view history, watch and other actions)
+// */
 
 
-/* Navigation Labels */
+// /* Navigation Labels */
 
-div.vectorTabs h3 {
-    display: none;
-}
-
-
-/* Namespaces and Views */
-
-div.vectorTabs {
-    /* @noflip */
-    float: left;
-    height: 2.5em;
-    ul {
-        /* @noflip */
-        float: left;
-        height: 100%;
-        list-style-type: none;
-        list-style-image: none;
-        margin: 0;
-        padding: 0;
-        li {
-            /* @noflip */
-            float: left;
-            line-height: 1.125em;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            white-space: nowrap;
-            display: block;
-        }
-    }
-    li {
-        &.new {
-            a,
-            a:visited {
-                color: #a55858;
-            }
-        }
-        &.selected {
-            a,
-            a:visited {
-                color: #333;
-                text-decoration: none;
-            }
-        }
-        &.icon {
-            a {
-                background-position: bottom right;
-                background-repeat: no-repeat;
-            }
-        }
-        a {
-            height: 1.9em;
-            padding-left: 0.5em;
-            padding-right: 0.5em;
-            color: @menu-link-color;
-            cursor: pointer;
-            font-size: 0.8em;
-            display: block;
-        }
-    }
-    span {
-        display: inline-block;
-        a {
-			padding-top: 1.25em;
-			display: block;
-        }
-    }
-}
+// div.vectorTabs h3 {
+//     display: none;
+// }
 
 
-/* Variants and Actions */
+// /* Namespaces and Views */
 
-div.vectorMenu {
-    /* @noflip */
-    direction: ltr;
-    /* @noflip */
-    float: left;
-    cursor: pointer;
-    position: relative;
-}
-
-body.rtl div.vectorMenu {
-    /* @noflip */
-    direction: rtl;
-}
-
-div#mw-head div.vectorMenu h3 {
-    /* @noflip */
-    float: left;
-    font-size: 1em;
-    height: 2.5em; // This effectively moves the "background border" outside of the element to act like a real
-    // border. It is necessary for the dropdown (div.vectorMenu div.menu) to align well.
-    padding-right: 1px;
-    margin-right: -1px;
-}
-
-div.vectorMenu h3 span {
-    display: block;
-    font-size: 0.8em;
-    padding-left: 0.7em;
-    padding-top: 1.375em;
-    margin-right: 20px;
-    font-weight: normal;
-    color: @menu-main-heading-color;
-}
-
-div.vectorMenu h3 a {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 20px;
-    height: 2.5em;
-}
-
-
-div.vectorMenu div.menu {
-    // Match the width of the dropdown "heading" (the tab)
-    min-width: 100%;
-    position: absolute;
-    top: 2.5em;
-    left: -1px;
-    background-color: white;
-    border: solid 1px silver;
-    border-top-width: 0;
-    clear: both;
-    text-align: left;
-    display: none; // overlap indicators (which has z-index 1, too)
-    z-index: 1;
-}
-
-
-/* Enable forcing showing of the menu for accessibility */
-
-div.vectorMenu:hover div.menu,
-div.vectorMenu.menuForceShow div.menu {
-    display: block;
-}
-
-div.vectorMenu ul {
-    list-style-type: none;
-    list-style-image: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
-}
+// div.vectorTabs {
+//     /* @noflip */
+//     float: left;
+//     height: 2.5em;
+//     ul {
+//         /* @noflip */
+//         float: left;
+//         height: 100%;
+//         list-style-type: none;
+//         list-style-image: none;
+//         margin: 0;
+//         padding: 0;
+//         li {
+//             /* @noflip */
+//             float: left;
+//             line-height: 1.125em;
+//             height: 100%;
+//             margin: 0;
+//             padding: 0;
+//             white-space: nowrap;
+//             display: block;
+//         }
+//     }
+//     li {
+//         &.new {
+//             a,
+//             a:visited {
+//                 color: #a55858;
+//             }
+//         }
+//         &.selected {
+//             a,
+//             a:visited {
+//                 color: #333;
+//                 text-decoration: none;
+//             }
+//         }
+//         &.icon {
+//             a {
+//                 background-position: bottom right;
+//                 background-repeat: no-repeat;
+//             }
+//         }
+//         a {
+//             height: 1.9em;
+//             padding-left: 0.5em;
+//             padding-right: 0.5em;
+//             color: @menu-link-color;
+//             cursor: pointer;
+//             font-size: 0.8em;
+//             display: block;
+//         }
+//     }
+//     span {
+//         display: inline-block;
+//         a {
+// 			padding-top: 1.25em;
+// 			display: block;
+//         }
+//     }
+// }
 
 
+// /* Variants and Actions */
 
-div.vectorMenu li {
-    padding: 0;
-    margin: 0;
-    text-align: left;
-    line-height: 1em;
-}
+// div.vectorMenu {
+//     /* @noflip */
+//     direction: ltr;
+//     /* @noflip */
+//     float: left;
+//     cursor: pointer;
+//     position: relative;
+// }
+
+// body.rtl div.vectorMenu {
+//     /* @noflip */
+//     direction: rtl;
+// }
+
+// div#mw-head div.vectorMenu h3 {
+//     /* @noflip */
+//     float: left;
+//     font-size: 1em;
+//     height: 2.5em; // This effectively moves the "background border" outside of the element to act like a real
+//     // border. It is necessary for the dropdown (div.vectorMenu div.menu) to align well.
+//     padding-right: 1px;
+//     margin-right: -1px;
+// }
+
+// div.vectorMenu h3 span {
+//     display: block;
+//     font-size: 0.8em;
+//     padding-left: 0.7em;
+//     padding-top: 1.375em;
+//     margin-right: 20px;
+//     font-weight: normal;
+//     color: @menu-main-heading-color;
+// }
+
+// div.vectorMenu h3 a {
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     width: 20px;
+//     height: 2.5em;
+// }
 
 
-/* OVERRIDDEN BY COMPLIANT BROWSERS */
+// div.vectorMenu div.menu {
+//     // Match the width of the dropdown "heading" (the tab)
+//     min-width: 100%;
+//     position: absolute;
+//     top: 2.5em;
+//     left: -1px;
+//     background-color: white;
+//     border: solid 1px silver;
+//     border-top-width: 0;
+//     clear: both;
+//     text-align: left;
+//     display: none; // overlap indicators (which has z-index 1, too)
+//     z-index: 1;
+// }
 
-div.vectorMenu li a {
-    display: inline-block;
-    padding: 0.5em;
-    white-space: nowrap;
-    color: @menu-link-color;
-    cursor: pointer;
-    font-size: 0.8em;
-}
+
+// /* Enable forcing showing of the menu for accessibility */
+
+// div.vectorMenu:hover div.menu,
+// div.vectorMenu.menuForceShow div.menu {
+//     display: block;
+// }
+
+// div.vectorMenu ul {
+//     list-style-type: none;
+//     list-style-image: none;
+//     padding: 0;
+//     margin: 0;
+//     text-align: left;
+// }
 
 
-/* IGNORED BY IE6 */
 
-div.vectorMenu li>a {
-    display: block;
-}
+// div.vectorMenu li {
+//     padding: 0;
+//     margin: 0;
+//     text-align: left;
+//     line-height: 1em;
+// }
 
-div.vectorMenu li.selected a,
-div.vectorMenu li.selected a:visited {
-    color: #333;
-    text-decoration: none;
-}
 
-// Expand vectorMenu as basic tabs in IE6
-// (IE6 doesn't support :hover on DIV)
-* html div.vectorMenu div.menu {
-    display: block;
-    position: static;
-    border: 0;
-}
+// /* OVERRIDDEN BY COMPLIANT BROWSERS */
 
-* html div#mw-head div.vectorMenu h3 {
-    display: none;
-}
+// // div.vectorMenu li a {
+// //     display: block;
+// //     padding: 0.5em;
+// //     white-space: nowrap;
+// //     color: @menu-link-color;
+// //     cursor: pointer;
+// //     font-size: 0.8em;
+// // }
 
-* html div.vectorMenu li {
-    float: left;
-    line-height: 1.125em;
-    border-right: 1px solid #a7d7f9;
-}
+// div.vectorMenu li.selected a,
+// div.vectorMenu li.selected a:visited {
+//     color: #333;
+//     text-decoration: none;
+// }
 
-* html div.vectorMenu li a {
-    padding-top: 1.25em;
-}
+// // Expand vectorMenu as basic tabs in IE6
+// // (IE6 doesn't support :hover on DIV)
+// * html div.vectorMenu div.menu {
+//     display: block;
+//     position: static;
+//     border: 0;
+// }
 
-@import 'watchstar.less';
+// * html div#mw-head div.vectorMenu h3 {
+//     display: none;
+// }
+
+// * html div.vectorMenu li {
+//     float: left;
+//     line-height: 1.125em;
+//     border-right: 1px solid #a7d7f9;
+// }
+
+// * html div.vectorMenu li a {
+//     padding-top: 1.25em;
+// }
+
+// @import 'watchstar.less';
