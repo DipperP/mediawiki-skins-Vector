@@ -458,9 +458,9 @@ class VectorTemplate extends BaseTemplate {
 						echo ' emptyPortlet';
 					}
 					?>" aria-labelledby="p-views-label">
-					
-					<?= $readEdit[0] . $readEdit[1] ?>
-
+					<ul class="resetList">
+						<?= $readEdit[0] . $readEdit[1] ?>
+					</ul>
 					<ul class="momo"<?php $this->html( 'userlangattributes' ) ?>>
 							<?php
 							$viewsNum = count($readEdit);
