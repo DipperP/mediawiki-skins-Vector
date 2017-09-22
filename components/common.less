@@ -10,783 +10,166 @@
  * "IGNORED BY IE6" comments.
  */
 
+ /* Local model styles */
+ 
+ 
 
-/* Local model styles */
 
-html {
-    box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
-}
-
-header {
-    clear: both;
-    position: relative;
-}
-
-.wrapcontainr {
-    min-height: 200px;
-}
-
-.containr {
-    /* max-width: 84.7em; */
-    max-width: 1300px;
-    /* this style determines when the auto margins kick in. so they kick in at 1301 yo. */
-    margin: 0 auto 0;
-    clear: both;
-}
-
-#main-content {
-    min-height: 300px;
-}
-
-#clear-del {
-    overflow: auto;
-    clear: both;
-}
-
-.mw-body {
-    float: left;
-    width: 74.5% !important;
-    background: #fff;
-    /* padding-right: 10px; */
-    padding-top: 60px;
-    padding-bottom: 30px;
-    padding-left: 0;
-    margin: 0;
-    border-right: 1px solid rgba(0, 0, 0, .13);
-}
-
-.side-mod {
-    float: left;
-    width: 25% !important;
-    /* margin: 30px 0 0; */
-    padding: 30px 0 30px 20px;
-}
-
-.footerwrap {
-    background-color: #fff;
-    border-top: 1px solid #e9ebed;
-    padding: 50px 24px;
-    position: relative;
-    clear: both;
-}
-
-.footer {
-    max-width: 84em;
-    padding: 0;
-    margin: 0 auto;
-}
-
-@media (min-width: 982px) {
-    .containr {
-        padding-left: 40px;
-        padding-right: 20px;
-    }
-}
-
-@media (max-width: 981px) {
-    .containr {
-        padding: 0 15px;
-    }
-}
-
-@media (max-width: 768px) {
-    .mw-body {
-        padding-right: 15px;
-    }
-}
-
-@media (min-width: 769px) and (max-width: 1200px) {
-    .mw-body {
-        padding-right: 24px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .mw-body {
-        padding-right: 36px;
-    }
-}
-
-.bgRight {
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    background: #eef2f5;
-    z-index: -10;
-}
-
-.containr::after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-body {
-    background-color: #fff !important;
-}
-
-.selected {
-    border-bottom: 1px solid orange;
-}
-
-#toc {
-    position: absolute;
-    right: -26em;
-    top: -4em;
-    border: none;
-    background-color: #f0efef;
-    display: none;
-}
-
-#toctitle {
-    text-align: left !important;
-    display: none;
-}
-
-.toctext {
-    color: #282828;
-}
-
-.tocnumber {
-    color: #b8b8b8;
-}
-
-.main-header .main-header__navigation {
-    margin-left: 12em !important;
-}
-
-li.menu__item.menu-top {
-    width: initial !important;
-}
-
-.menu__item {
-    padding: 0 1em;
-}
-
-.edit-dropdown {
-    display: inline-block;
-}
-
-.edit-button {
-    display: block;
-    /* This makes containing div expand to the size, padding of this */
-    border-radius: 100px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    line-height: 20px;
-    padding: 6px 26px;
-    /* padding: 6px 16px; */
-    position: relative;
-    text-align: center;
-    white-space: nowrap;
-    background-color: lightgreen;
-}
-
-.edit-dropdown:hover ul.momo {
-    display: block;
-    left: initial;
-    top: initial;
-}
-
-.generic-dropdown {
-    display: none;
-    padding: 7px 0;
-    margin: 0;
-    list-style: none;
-}
-
-html {
-    font-size: 93.75% !important;
-}
-
-body {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 15px;
-    color: #161616 !important;
-    padding: 0;
-    margin: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #161616 !important;
-    font-family: 'Open Sans', sans-serif !important;
-    line-height: 1.4 !important;
-    margin-bottom: 8px !important;
-    padding: 0;
-}
-
-h1 {
-    font-size: 2.3rem !important;
-    font-weight: 600 !important;
-    padding-bottom: 12px !important;
-    /* margin-top: 0 !important; */
-    border-bottom: 1px solid #e8e8e8;
-}
-
-h2 {
-    font-size: 1.8rem !important;
-    font-weight: 600 !important;
-    border: none;
-    /* border-bottom: 1px solid #e8e8e8; */
-    margin-top: 30px !important;
-}
-
-h2+h3 {
-    margin-top: 16px !important;
-}
-
-h3 {
-    font-size: 1.5rem !important;
-    margin-top: 16px !important;
-}
-
-h4 {
-    font-size: 1.25rem !important;
-    margin-top: 16px !important;
-}
-
-h5,
-h6 {
-    margin-top: 16px !important;
-}
-
-h3,
-h4 {
-    font-weight: 600 !important;
-}
-
-h2:hover a,
-h3:hover a,
-h4:hover a,
-h5:hover a,
-h6:hover a {
-    display: inline-block;
-}
-
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-    /* float: right; */
-    margin-left: 20px;
-    margin-right: 4px;
-    cursor: pointer;
-    display: none;
-    border: 2px solid #ccc;
-    border-radius: 50%;
-    /* background-color: #fff; */
-    position: relative;
-}
-
-h2 a {
-    padding: 11px;
-    top: 1.5px
-}
-
-h3 a {
-    padding: 10px;
-    top: 2px
-}
-
-h4 a {
-    padding: 8px;
-    top: 1px
-}
-
-h5 a {
-    padding: 6px;
-    top: 2.2px
-}
-
-h6 a {
-    padding: 6px;
-    top: 2.2px
-}
-
-
-/*
-#user-profile {
-    width: 2.25em;
-    height: 2.25em;
-    display: inline-block;
-    position: relative;
-    margin: 1.375em auto;
-    float: right;
-    cursor: pointer
-}
-
-.user-menu__avatar {
-    width: 3.375em;
-    height: 3.375em;
-    margin: 0 auto
-}
-
-.user-menu__avatar img {
-    border-radius: 50%;
-    max-width: 100%
-}
-
-#pt-mycontris {
-    padding-bottom: 8px
-}
-
-#pt-mytalk a::before,
-#pt-preferences a::before,
-#pt-mycontris a::before,
-#pt-watchlist a::before,
-#menulist-profile::before {
-    content: "";
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    display: block;
-    float: left;
-    margin-right: 12px;
-    height: 1.5em;
-    position: relative;
-    width: 1.5em;
-    display: -ms-inline-flexbox;
-    display: -webkit-inline-flex;
-    display: inline-flex
-}
-
-.user-logo {
-    border-radius: 50%;
-    max-width: 100%
-}
-
-div#simpleSearch #searchButton {
-    margin-right: 5px
-}
-
-input#searchInput {
-    height: 2.25em;
-    padding: .5em .8em !important;
-    border-radius: 6em;
-    border: 1px solid #dddfed;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
-    border-radius: 20px;
-    background-color: #f4f4f4 !important;
-    font-size: .9em
-}
-
-div#simpleSearch {
-    display: block;
-    width: 12.6em;
-    width: 17vw;
-    position: relative;
-    min-height: 1px;
-    color: black;
-    background-color: white
-}
-
-div#p-search {
-    position: absolute;
-    z-index: 9999;
-    bottom: -2.8125em;
-    width: 100%;
-    height: 2.8125em
-}
-
-@media screen and (min-width:64em) {
-    div#p-search {
-        display: block;
-        top: 0;
-        right: 8.5em;
-        width: auto;
-        height: 2.25em;
-        margin: 1.375em 0
-    }
-}
-
-.main-header-wrapper {
-    padding-right: 30px;
-    padding-left: 30px
-}
-
-.user-menu {
-    padding: 0.75em 0;
-    position: absolute;
-    display: none;
-    box-shadow: 0 0 0.5em 0 rgba(0, 0, 0, 0.5);
-    border-radius: 0.375em;
-    z-index: 10000;
-    background-color: #3f4149;
-    top: 2.375rem;
-    right: 0em;
-    width: 13em
-}
-
-@media screen and (min-width:64em) {
-    .user-menu {
-        top: 4.375em;
-        right: 0.625em
-    }
-}
-
-#options-user a:hover {
-    background-color: #51545e !important;
-    color: #bbbecd !important
-}
-
-#options-user a {
-    display: block;
-    vertical-align: middle;
-    color: #b0b3c5 !important;
-    white-space: nowrap;
-    font-size: 1em !important;
-    text-decoration: none;
-    padding: 6px 18px;
-    line-height: 1.6
-}
-
-ul#options-user {
-    margin: 0
-}
-
-#options-user li {
-    line-height: initial;
-    margin: 0
-}
-
-#pt-userpage a {
-    text-align: center;
-    vertical-align: middle
-}
-
-header,
-nav {
-    display: block
-}
-
-#pt-userpage {
-    margin: 0 1em 0.75em
-}
-
-
-html {
-    box-sizing: border-box
-}
-
-body {
-    height: 100%
-}
-
-body>header {
-    background-color: #dddfed
-}
-
-.main-header {
-    position: relative;
-    z-index: 99;
-    width: 100%;
-    overflow: visible;
-    background-color: #9b12ee;
-    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1)
-}
-
-@media screen and (min-width:40em) {
-    .main-header {
-        background-color: white
-    }
-}
-
-.main-header .main-header-wrapper {
-    max-width: 80em;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    z-index: 9999;
-    max-width: 80em
-}
-
-.main-header .main-header-wrapper::after {
-    clear: both;
-    content: "";
-    display: table
-}
-
-.main-header .main-header-wrapper::after {
-    clear: both;
-    content: "";
-    display: table
-}
-
-.main-header .logo {
-    float: left;
-    padding-left: .5em;
-    line-height: 0
-}
-
-@media screen and (min-width:40em) {
-    .main-header .logo {
-        position: absolute;
-        top: -1.75rem;
-        left: 0;
-        padding: 0;
-        line-height: 0
-    }
-}
-
-.main-header .main-header__navigation {
-    z-index: 9999999;
-    float: none;
-    line-height: 0
-}
-
-@media screen and (min-width:40em) {
-    .main-header .main-header__navigation {
-        float: left;
-        margin-left: 7.8125rem
-    }
-}
-
-@media screen and (min-width:64em) {
-    .main-header .main-header__navigation {
-        margin-left: 12.125rem
-    }
-}
-
-.main-header .navigation__menu {
-    display: table;
-    z-index: 9999;
-    clear: both;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0;
-    overflow: visible;
-    table-layout: fixed;
-    background-color: white;
-    line-height: 0;
-    text-align: center
-}
-
-@media screen and (min-width:40em) {
-    .main-header .navigation__menu {
-        display: inline-block;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        border: none
-    }
-}
-
-.main-header ul .menu__item {
-    display: table-cell;
-    position: relative;
-    z-index: 9999;
-    overflow: hidden;
-    line-height: 2.375rem;
-    text-align: center
-}
-
-@media screen and (min-width:40em) {
-    .main-header ul .menu__item {
-        display: inline-block;
-        float: left;
-        width: 5rem;
-        background: transparent;
-        line-height: 3.375rem;
-        text-decoration: none
-    }
-}
-
-@media screen and (min-width:64em) {
-    .main-header ul .menu__item {
-        width: 5.625rem;
-        line-height: 5rem
-    }
-}
-
-@media screen and (min-width:40em) {
-    .main-header ul .menu__item:first-child {
-        width: 3.75rem
-    }
-}
-
-@media screen and (min-width:64em) {
-    .main-header ul .menu__item:first-child {
-        width: 5.625rem
-    }
-}
-
-.main-header ul .menu__item a {
-    display: inline-block;
-    position: relative;
-    float: left;
-    width: 100%;
-    color: rgba(0, 0, 0, 0.87);
-    font-size: 0.875rem;
-    text-align: center;
-    text-decoration: none
-}
-
-@media screen and (min-width:40em) {
-    .main-header ul .menu__item a {
-        font-size: 1rem
-    }
-}
-
-@media screen and (min-width:64em) {
-    .main-header ul .menu__item a {
-        font-size: 1.125rem
-    }
-}
-
-#pt-userpage {
-    margin: 0 1em 0.75em
-}
-*/
 
 @import "mediawiki.mixins";
 
 /* Framework */
-
 html {
-    font-size: @html-font-size;
+	font-size: @html-font-size;
 }
-
 html,
 body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: @content-font-family;
-    /* now opens sans not shitty generic */
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: @content-font-family; /* now opens sans not shitty generic */
 }
-
 body {
-    //	background-color: @menu-background-color; 
-    //	background-color: #f6f6f6;
+//	background-color: @menu-background-color; 
+//	background-color: #f6f6f6;
     background-color: #eff1f6;
-    //    background-color: white; 
+//    background-color: white; 
 }
 
 // Style for main page only 
 body.page-Main_Page .mw-body {
-    width: 90% !important;
-    // 	background-color: green;
+	width: 90% !important;
+// 	background-color: green;
 }
 
 //Remove main page title
-body.page-Main_Page.action-view h1.firstHeading,
-body.page-Main_Page.action-submit h1.firstHeading {
-    display: none;
-}
+body.page-Main_Page.action-view h1.firstHeading, body.page-Main_Page.action-submit h1.firstHeading { display: none; }
 
 
 /* Content */
+.mw-body {	
+	width: 65%;
+    margin-top: 4em;
+	margin-left: auto; 
+    margin-right: auto;
+    /* border: solid 1px rgba(0,0,0,0.2); */
+    /* border-radius: 8px;  like BC notices page*/ 
+  //  border-right: 1px solid #ededed;
+ //   padding-right: 44px;
+	margin-left: auto;
+	background-color: white;
+	/*
+	margin-left: 10em;
+	padding: @content-padding;
+	border: 1px solid @content-border-color;
+	border-right-width: 0;
+	margin-top: -1px;
+	background-color: @body-background-color;
+	color: @content-font-color;
+	direction: ltr; */
 
-    .mw-editsection,
-    .mw-editsection-like {
-        font-family: @content-font-family;
-    }
-    p {
-        line-height: inherit;
-        margin: 0.5em 0;
-    }
-    h1,
-    h2 {
-        font-family: @content-heading-font-family;
-        line-height: @heading-line-height;
-        margin-bottom: 0.25em;
-        padding: 0;
-        /* Fallback heading font for scripts which render poorly in @content-heading-font-family. */
-        /* See T73240 */
-        &:lang( ja),
-        /* See T65817 */
-        &:lang( he),
-        /* See T65843 and T65844 */
-        &:lang( ko) {
-            /* See T65827 */
-            font-family: @content-heading-font-family-generic;
-        }
-    }
-    h1 {
-        font-size: @content-heading-font-size;
-    }
-    h3,
-    h4,
-    h5,
-    h6 {
-        line-height: @content-line-height;
-    } // h4,
-    // h5,
-    // h6 {
-    // 	font-size: 100%; /* (reset) */
-    // }
-    #toc h2,
-    .toc h2 {
-        font-size: 100%;
-        /* (reset) */
-        font-family: @content-font-family;
-    }
-    .firstHeading {
-        /* Change the default from mediawiki.skinning CSS to let indicators float into heading area */
-        overflow: visible;
-    }
-    .mw-indicators {
-        float: right;
-        line-height: @content-line-height; // font-size: @content-font-size;
-        /* Ensure that this is displayed on top of .mw-body-content and clickable */
-        position: relative;
-        z-index: 1;
-    }
-    .mw-indicator {
-        display: inline-block;
-        zoom: 1;
-        *display: inline;
-    }
+	.mw-editsection,
+	.mw-editsection-like {
+		font-family: @content-font-family;
+	}
+
+	p {
+		line-height: inherit;
+		margin: 0.5em 0;
+	}
+
+	h1,
+	h2 {
+		font-family: @content-heading-font-family;
+		line-height: @heading-line-height;
+		margin-bottom: 0.25em;
+		padding: 0;
+
+		/* Fallback heading font for scripts which render poorly in @content-heading-font-family. */
+		/* See T73240 */
+		&:lang( ja ), /* See T65817 */
+		&:lang( he ), /* See T65843 and T65844 */
+		&:lang( ko ) { /* See T65827 */
+			font-family: @content-heading-font-family-generic;
+		}
+	}
+
+	h1 {
+		font-size: @content-heading-font-size;
+	}
+
+	h3,
+	h4,
+	h5,
+	h6 {
+		line-height: @content-line-height;
+	}
+
+
+	// h4,
+	// h5,
+	// h6 {
+	// 	font-size: 100%; /* (reset) */
+	// }
+
+	#toc h2,
+	.toc h2 {
+		font-size: 100%; /* (reset) */
+		font-family: @content-font-family;
+	}
+
+	.firstHeading {
+		/* Change the default from mediawiki.skinning CSS to let indicators float into heading area */
+		overflow: visible;
+	}
+
+	.mw-indicators {
+		float: right;
+		line-height: @content-line-height;
+		// font-size: @content-font-size;
+		/* Ensure that this is displayed on top of .mw-body-content and clickable */
+		position: relative;
+		z-index: 1;
+	}
+
+	.mw-indicator {
+		display: inline-block;
+		zoom: 1;
+		*display: inline;
+	}
 }
 
-
 /* Hide empty portlets */
-
 div.emptyPortlet {
-    display: none;
+	display: none;
 }
 
 ul {
-    list-style-type: disc;
-    .list-style-image-svg('images/bullet-icon.svg', 'images/bullet-icon.png');
+	list-style-type: disc;
+	.list-style-image-svg('images/bullet-icon.svg', 'images/bullet-icon.png');
 }
 
 pre,
 .mw-code {
-    line-height: 1.3em;
+	line-height: 1.3em;
 }
 
-
 /* Site Notice (includes notices from CentralNotice extension) */
-
 #siteNotice {
-    font-size: 0.8em;
+	font-size: 0.8em;
 }
 
 .redirectText {
-    font-size: 140%;
+	font-size: 140%;
 }
 
 .redirectMsg p {
-    margin: 0;
+	margin: 0;
 }
 
 .mw-body-content {
-    position: relative;
-    line-height: @content-line-height; // font-size: @content-font-size; // THIS IS SOME SERIOUS BULLSHIT LESS THAN 16 PX
-    z-index: 0;
+	position: relative;
+	line-height: @content-line-height;
+	// font-size: @content-font-size; // THIS IS SOME SERIOUS BULLSHIT LESS THAN 16 PX
+	z-index: 0;
 }
