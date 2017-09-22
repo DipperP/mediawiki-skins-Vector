@@ -35,7 +35,8 @@ class VectorTemplate extends BaseTemplate {
 	public function execute() {
 		$this->data['namespace_urls'] = $this->data['content_navigation']['namespaces'];
 		$this->data['view_urls'] = $this->data['content_navigation']['views'];
-		$this->data['action_urls'] = $this->data['content_navigation']['actions'];
+		$this->data['view_urls'] .= $this->data['content_navigation']['actions'];
+		//$this->data['action_urls'] = $this->data['content_navigation']['actions'];
 		$this->data['variant_urls'] = $this->data['content_navigation']['variants'];
 
 		// Move the watch/unwatch star outside of the collapsed "actions" menu to the main "views" menu
@@ -44,9 +45,9 @@ class VectorTemplate extends BaseTemplate {
 				? 'unwatch'
 				: 'watch';
 
-			if ( isset( $this->data['action_urls'][$mode] ) ) {
-				$this->data['view_urls'][$mode] = $this->data['action_urls'][$mode];
-				unset( $this->data['action_urls'][$mode] );
+			// if ( isset( $this->data['action_urls'][$mode] ) ) {
+			// 	$this->data['view_urls'][$mode] = $this->data['action_urls'][$mode];
+			// 	unset( $this->data['action_urls'][$mode] );
 			}
 		}
 
@@ -126,10 +127,6 @@ class VectorTemplate extends BaseTemplate {
 				<div id="clear-del">
 					<div id="content" class="mw-body" role="main">
 
-						<div id="right-navigation"> 
-								<?php $this->renderNavigation( [ 'VIEWS', 'ACTIONS' ] ); ?>
-						</div>
-
 						<?php
 						if ( $this->data['sitenotice'] ) {
 							?>
@@ -205,6 +202,47 @@ class VectorTemplate extends BaseTemplate {
 							<?php $this->html( 'debughtml' ); ?>
 						</div>
 					</div> <!-- end mw-body -->
+				<div class="side-mod">
+					<div id="right-navigation"> 
+						<?php $this->renderNavigation( [ 'VIEWS', 'ACTIONS' ] ); ?>
+					</div>
+
+						<div class="edit-dropdown" role="navigation" aria-labelledby="p-views-label">
+						<a class="edit-button" href="google.com">
+							Edit
+						</a>
+								<!-- <h3 id="p-views-label">Views</h3> -->
+							<ul class="momo">
+								<li id="ca-edit" class=""><span><a href="action=edit" title="Edit this page [alt-shift-e]" accesskey="e">Edit</a></span></li>
+								<li id="ca-history" class="collapsible"><span><a href="&amp;action=history" title="Past revisions of this page [alt-shift-h]" accesskey="h">View history</a></span></li>
+								<li id="ca-unwatch" class="icon mw-watchlink"><span><a href="action=unwatch" title="Remove this page from your watchlist [alt-shift-w]" accesskey="w">Unwatch</a></span></li>
+								<li id="ca-delete"><span><a href="action=delete" title="Delete this page [alt-shift-d]" accesskey="d">Delete</a></span></li>
+								<li id="ca-move"><span><a href="" title="Move this page [alt-shift-m]" accesskey="m">Move</a></span></li>
+								<li id="ca-protect"><span><a href="action=protect" title="Protect this page [alt-shift-=]" accesskey="=">Protect</a></span></li>
+							</ul>
+						</div>
+						
+
+						<div id="rightSide">
+									<h1>로그인</h1>
+									<div id="login-message" class="message">친구들이 접속 중인지 궁금한가요?</div><a href="file:///C:/Users/Brandon/Desktop/Ruby/Crystal.html#" onclick="GNBLogin(); return false;" title="로그인" class="go-login"><span>plaync</span> 로그인</a>
+									<ul class="member">
+										<li class="join"><a href="http://go.plaync.co.kr/Account/Join">회원가입</a></li>
+										<li class="find"><a href="http://go.plaync.co.kr/Account/SearchAccount" name="findid">계정</a>/<a href="http://go.plaync.co.kr/Account/SearchPassword" name="findpwd">비밀번호 찾기</a></li>
+										</ul><a href="file:///C:/Users/Brandon/Desktop/Ruby/Crystal.html#" onclick="NCSLogin.facebookAuth(location.href); return false;" id="fb-login" class="fb_login"><span>facebook</span> 로그인</a>
+										<a href="file:///C:/Users/Brandon/Desktop/Ruby/Crystal.html#" onclick="NCSLogin.googleAuth(location.href); return false;" id="google-login" class="gb_login"><span>google</span> 로그인</a>
+								
+								<ul class="lnb">
+									<li class="job_on"><a href="file:///C:/board/job/article" title="직업게시판">직업게시판</a></li>
+									<li class="server"><a href="file:///C:/board/server/home" title="서버게시판">서버게시판</a> </li>
+									<li class="free"><a href="file:///C:/board/free/article" title="자유게시판">자유게시판</a> </li>
+									<li class="image"><a href="file:///C:/board/image/article" title="이미지게시판">이미지게시판</a> </li>
+									<li class="sandbox"><a href="http://sandbox.plaync.com/$!/bns" title="샌드박스">샌드박스</a> </li>
+							</ul>
+						</div>
+						</div>				
+					</div>
+
 				</div>
 			</div>
 		</div>
