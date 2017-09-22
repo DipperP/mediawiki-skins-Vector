@@ -118,130 +118,138 @@ class VectorTemplate extends BaseTemplate {
             </div>
 	</header>
 		
-		<div class="bgRight"> </div>
+	<div class="bgRight"></div>
 
-		<div id="content" class="mw-body" role="main">
+	<div class="wrapcontainr">	
+		<div class="containr">
+			<div id="main-content">
+				<div id="clear-del">
+					<div id="content" class="mw-body" role="main">
 
-		<div id="right-navigation"> 
-				<?php $this->renderNavigation( [ 'VIEWS', 'ACTIONS' ] ); ?>
-			</div>
+						<div id="right-navigation"> 
+								<?php $this->renderNavigation( [ 'VIEWS', 'ACTIONS' ] ); ?>
+						</div>
 
-			<?php
-			if ( $this->data['sitenotice'] ) {
-				?>
-				<div id="siteNotice" class="mw-body-content"><?php $this->html( 'sitenotice' ) ?></div>
-			<?php
-			}
-			?>
-			<?php
-			if ( is_callable( [ $this, 'getIndicators' ] ) ) {
-				echo $this->getIndicators();
-			}
-			// Loose comparison with '!=' is intentional, to catch null and false too, but not '0'
-			if ( $this->data['title'] != '' ) {
-			?>
-			<h1 id="firstHeading" class="firstHeading" lang="<?php $this->text( 'pageLanguage' ); ?>"><?php
-				$this->html( 'title' )
-			?></h1>
-			<?php
-			} ?>
-			<?php $this->html( 'prebodyhtml' ) ?>
-			<div id="bodyContent" class="mw-body-content">
-				<?php
-				if ( $this->data['isarticle'] ) {
-					?>
-					<div id="siteSub" class="noprint"><?php $this->msg( 'tagline' ) ?></div>
-				<?php
-				}
-				?>
-				<div id="contentSub"<?php $this->html( 'userlangattributes' ) ?>><?php
-					$this->html( 'subtitle' )
-				?></div>
-				<?php
-				if ( $this->data['undelete'] ) {
-					?>
-					<div id="contentSub2"><?php $this->html( 'undelete' ) ?></div>
-				<?php
-				}
-				?>
-				<?php
-				if ( $this->data['newtalk'] ) {
-					?>
-					<div class="usermessage"><?php $this->html( 'newtalk' ) ?></div>
-				<?php
-				}
-				?>
-				<div id="jump-to-nav" class="mw-jump">
-					<?php $this->msg( 'jumpto' ) ?>
-					<a href="#mw-head"><?php
-						$this->msg( 'jumptonavigation' )
-					?></a><?php $this->msg( 'comma-separator' ) ?>
-					<a href="#p-search"><?php $this->msg( 'jumptosearch' ) ?></a>
-				</div>
-				<?php
-				$this->html( 'bodycontent' );
-
-				if ( $this->data['printfooter'] ) {
-					?>
-					<div class="printfooter">
-						<?php $this->html( 'printfooter' ); ?>
-					</div>
-				<?php
-				}
-
-				if ( $this->data['catlinks'] ) {
-					$this->html( 'catlinks' );
-				}
-
-				if ( $this->data['dataAfterContent'] ) {
-					$this->html( 'dataAfterContent' );
-				}
-				?>
-				<div class="visualClear"></div>
-				<?php $this->html( 'debughtml' ); ?>
-			</div>
-		</div>
-		
-		<div id="footer" role="contentinfo"<?php $this->html( 'userlangattributes' ) ?>>
-			<?php
-			foreach ( $this->getFooterLinks() as $category => $links ) {
-				?>
-				<ul id="footer-<?php echo $category ?>">
-					<?php
-					foreach ( $links as $link ) {
+						<?php
+						if ( $this->data['sitenotice'] ) {
+							?>
+							<div id="siteNotice" class="mw-body-content"><?php $this->html( 'sitenotice' ) ?></div>
+						<?php
+						}
 						?>
-						<li id="footer-<?php echo $category ?>-<?php echo $link ?>"><?php $this->html( $link ) ?></li>
-					<?php
-					}
-					?>
-				</ul>
-			<?php
-			}
-			?>
-			<?php $footericons = $this->getFooterIcons( 'icononly' );
-			if ( count( $footericons ) > 0 ) {
-				?>
-				<ul id="footer-icons" class="noprint">
-					<?php
-					foreach ( $footericons as $blockName => $footerIcons ) {
+						<?php
+						if ( is_callable( [ $this, 'getIndicators' ] ) ) {
+							echo $this->getIndicators();
+						}
+						// Loose comparison with '!=' is intentional, to catch null and false too, but not '0'
+						if ( $this->data['title'] != '' ) {
 						?>
-						<li id="footer-<?php echo htmlspecialchars( $blockName ); ?>ico">
+						<h1 id="firstHeading" class="firstHeading" lang="<?php $this->text( 'pageLanguage' ); ?>"><?php
+							$this->html( 'title' )
+						?></h1>
+						<?php
+						} ?>
+						<?php $this->html( 'prebodyhtml' ) ?>
+						<div id="bodyContent" class="mw-body-content">
 							<?php
-							foreach ( $footerIcons as $icon ) {
-								echo $this->getSkin()->makeFooterIcon( $icon );
+							if ( $this->data['isarticle'] ) {
+								?>
+								<div id="siteSub" class="noprint"><?php $this->msg( 'tagline' ) ?></div>
+							<?php
 							}
 							?>
-						</li>
-					<?php
-					}
-					?>
-				</ul>
-			<?php
-			}
-			?>
-			<div style="clear:both"></div>
+							<div id="contentSub"<?php $this->html( 'userlangattributes' ) ?>><?php
+								$this->html( 'subtitle' )
+							?></div>
+							<?php
+							if ( $this->data['undelete'] ) {
+								?>
+								<div id="contentSub2"><?php $this->html( 'undelete' ) ?></div>
+							<?php
+							}
+							?>
+							<?php
+							if ( $this->data['newtalk'] ) {
+								?>
+								<div class="usermessage"><?php $this->html( 'newtalk' ) ?></div>
+							<?php
+							}
+							?>
+							<div id="jump-to-nav" class="mw-jump">
+								<?php $this->msg( 'jumpto' ) ?>
+								<a href="#mw-head"><?php
+									$this->msg( 'jumptonavigation' )
+								?></a><?php $this->msg( 'comma-separator' ) ?>
+								<a href="#p-search"><?php $this->msg( 'jumptosearch' ) ?></a>
+							</div>
+							<?php
+							$this->html( 'bodycontent' );
+
+							if ( $this->data['printfooter'] ) {
+								?>
+								<div class="printfooter">
+									<?php $this->html( 'printfooter' ); ?>
+								</div>
+								<?php
+								}
+
+								if ( $this->data['catlinks'] ) {
+									$this->html( 'catlinks' );
+								}
+
+							if ( $this->data['dataAfterContent'] ) {
+								$this->html( 'dataAfterContent' );
+							}
+							?>
+							<div class="visualClear"></div>
+							<?php $this->html( 'debughtml' ); ?>
+						</div>
+					</div> <!-- end mw-body -->
+				</div>
+			</div>
 		</div>
-		<?php $this->printTrail(); ?>
+	</div> <!-- end wrapcontainr -->
+		
+	<div id="footer" role="contentinfo"<?php $this->html( 'userlangattributes' ) ?>>
+		<?php
+		foreach ( $this->getFooterLinks() as $category => $links ) {
+			?>
+			<ul id="footer-<?php echo $category ?>">
+				<?php
+				foreach ( $links as $link ) {
+					?>
+					<li id="footer-<?php echo $category ?>-<?php echo $link ?>"><?php $this->html( $link ) ?></li>
+				<?php
+				}
+				?>
+			</ul>
+		<?php
+		}
+		?>
+		<?php $footericons = $this->getFooterIcons( 'icononly' );
+		if ( count( $footericons ) > 0 ) {
+			?>
+			<ul id="footer-icons" class="noprint">
+				<?php
+				foreach ( $footericons as $blockName => $footerIcons ) {
+					?>
+					<li id="footer-<?php echo htmlspecialchars( $blockName ); ?>ico">
+						<?php
+						foreach ( $footerIcons as $icon ) {
+							echo $this->getSkin()->makeFooterIcon( $icon );
+						}
+						?>
+					</li>
+				<?php
+				}
+				?>
+			</ul>
+		<?php
+		}
+		?>
+		<div style="clear:both"></div>
+	</div>
+	<?php $this->printTrail(); ?>
 
 	</body>
 </html>
