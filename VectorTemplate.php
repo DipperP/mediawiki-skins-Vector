@@ -467,19 +467,27 @@ class VectorTemplate extends BaseTemplate {
 					}
 					?>" aria-labelledby="p-personal-label">
 						<h3 id="p-personal-label"><?php $this->msg( 'personaltools' ) ?></h3>
-						<ul<?php $this->html( 'userlangattributes' ) ?>>
-							<?php
-							$notLoggedIn = '';
 
-							if ( !$this->getSkin()->getUser()->isLoggedIn() &&
-								User::groupHasPermission( '*', 'edit' )
-							) {
-								$notLoggedIn =
-									Html::rawElement( 'li',
-										[ 'id' => 'pt-anonuserpage' ],
-										$this->getMsg( 'notloggedin' )->escaped()
-									);
-							}
+						<div id="user-profile">
+   	 						<img class="user-logo" src="http://images.battlecomics.co.kr/page/avatar_default.jpg" alt="Avatar default">
+						</div>
+						<div clcase 'PERSONAL':ass="user-menu">
+							<div class="user-menu__avatar">
+								<img src="http://images.battlecomics.co.kr/page/avatar_default.jpg" alt="Avatar default">
+							</div>
+						    <ul id="options-user"<?php $this->html( 'userlangattributes' ) ?>>
+						
+							<?php
+							// All this and more code does is say 'not logged in in plain text. its utterly useless.'
+							// $notLoggedIn = '';
+							// if ( !$this->getSkin()->getUser()->isLoggedIn() &&
+							// 	User::groupHasPermission( '*', 'edit' ) ){
+							// 	$notLoggedIn =
+							// 		Html::rawElement( 'li',
+							// 			[ 'id' => 'pt-anonuserpage' ],
+							// 			$this->getMsg( 'notloggedin' )->escaped()
+							// 		);
+							// 	}
 
 							$personalTools = $this->getPersonalTools();
 
@@ -491,7 +499,7 @@ class VectorTemplate extends BaseTemplate {
 
 							if ( !$this->data[ 'rtl' ] ) {
 								echo $langSelector;
-								echo $notLoggedIn;
+								// echo $notLoggedIn;
 							}
 
 							foreach ( $personalTools as $key => $item ) {
@@ -499,14 +507,16 @@ class VectorTemplate extends BaseTemplate {
 							}
 
 							if ( $this->data[ 'rtl' ] ) {
-								echo $notLoggedIn;
+								// echo $notLoggedIn;
 								echo $langSelector;
 							}
 							?>
 						</ul>
-					</div>
+						</div> 
+					</div> 
 					<?php
 					break;
+
 				case 'SEARCH':
 					?>
 					<div id="p-search" role="search">
