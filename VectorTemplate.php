@@ -71,8 +71,7 @@ class VectorTemplate extends BaseTemplate {
         <div class="main-header">
             <div class="main-header-wrapper">
 	            <!-- <a class="logo" href="#"><img class="large_logo" alt="ex_logo" data-fallback="png_logo.png" src=""></a> -->
-                <nav class="main-header__navigation" role="navigation">
-
+                <nav class="navdeleteclass" role="navigation" style="display: inline-block">
                     <ul class="navigation__menu">
                         <li class="menu__item menu-top">
                             <a href="#">MetaGame</a>
@@ -103,16 +102,17 @@ class VectorTemplate extends BaseTemplate {
                         <li class="menu__item">
                             <a href="#">Performance</a>
                         </li>
-						<li style="padding-left: 20px;" class="menu__item">
+						<li class="menu__item">
                             <a href="http://127.0.0.1/wooper">Video</a>
                         </li>
                     </ul>
                 </nav>
-				<?php $this->renderNavigation( 'PERSONAL' ); ?>	
-
-				<?php $this->renderNavigation( [ 'SEARCH' ] ); ?>
-                <div class="search-bar" role="search">
-                    </div>
+				<div class="nav-right">
+					<?php $this->renderNavigation( 'PERSONAL' ); ?>	
+					<?php $this->renderNavigation( [ 'SEARCH' ] ); ?>
+				</div>
+                <!-- <div class="search-bar" role="search">
+                    </div> dead from old vector-->
 
                 </div>
             </div>
@@ -576,8 +576,8 @@ class VectorTemplate extends BaseTemplate {
 						</form>
 					</div>
 					<?php
-
 					break;
+
 			}
 		}
 	}
