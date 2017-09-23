@@ -135,7 +135,7 @@ body {
 
 // Edit dropdown button
 .edit-dropdown {
-    float: left;
+    display: inline-block;
     border: 1px solid #ccc;
     border-radius: 50px;
     position: relative;
@@ -147,10 +147,20 @@ body {
     float: left;
 }
 
+.views li a:hover {
+    text-decoration: none; // for read back to page find how others (edit, dropdown) remove underline
+}
+
+.views li {
+    text-decoration: none; // add resetList class to makelink for this instead
+}
+
 .edit-dropdown li a {
     padding: 0 12px;
 }
-.ca-edit, .ca-view {
+
+.ca-edit,
+.ca-view {
     font-weight: 600; // I think this maybe looks bad having only them bolded. It suggests they are more important.
 }
 
@@ -167,6 +177,10 @@ body {
     margin: 0;
     list-style: none;
     padding: 0;
+}
+
+.rightSide {
+    margin-top: 28px;
 }
 
 #toc {
@@ -203,10 +217,6 @@ li.menu__item.menu-top {
     padding: 0 1em;
 }
 
-.edit-dropdown {
-    display: inline-block;
-}
-
 .edit-button {
     display: block;
     /* This makes containing div expand to the size, padding of this */
@@ -225,8 +235,6 @@ li.menu__item.menu-top {
 
 .edit-dropdown:hover ul.momo {
     display: block;
-    left: initial;
-    top: initial;
 }
 
 .generic-dropdown {

@@ -154,9 +154,12 @@ class VectorTemplate extends BaseTemplate {
 							<?php
 							}
 							?>
-							<div id="contentSub"<?php $this->html( 'userlangattributes' ) ?>><?php
-								$this->html( 'subtitle' )
-							?></div>
+							<div id="contentSub"<?php $this->html( 'userlangattributes' ) ?>>
+								<a class="resetList <?=$this->data['view_urls']['view']['class']?>" 
+								href="<? $this->data['view_urls']['view']['href'] ?>">← Back to page</a> | 
+								<?php
+								$this->html( 'subtitle' )?>
+							</div>
 							<?php
 							if ( $this->data['undelete'] ) {
 								?>
@@ -453,25 +456,28 @@ class VectorTemplate extends BaseTemplate {
 							] ) . "\n";
 						}
 					?>
-					<div class="edit-dropdown" role="navigation"<?php
-					if ( count( $this->data['view_urls'] ) == 0 ) {
-						echo ' emptyPortlet';
-					}
-					?>" aria-labelledby="p-views-label">
-					<ul class="resetList">
-						<?= $readEdit[0] . $readEdit[1] ?>
-					</ul>
-					<ul class="momo"<?php $this->html( 'userlangattributes' ) ?>>
-							<?php
-							$viewsNum = count($readEdit);
-							for ($ii = 2; $ii < $viewsNum; $ii++) {
-							echo $readEdit[$ii]; // views array variable length
+					<div class="views">
+						<div class="edit-dropdown" role="navigation"<?php
+							if ( count( $this->data['view_urls'] ) == 0 ) {
+								echo ' emptyPortlet';
 							}
-							foreach ( $this->data['action_urls'] as $key => $item ) {
-								echo "\t\t\t\t\t\t\t\t" . $this->makeListItem( $key, $item ) . "\n";
-							}
-							?>
-						</ul>
+							?>" aria-labelledby="p-views-label">
+							<ul class="resetList">
+								<?= $readEdit[1] ?>
+							</ul>
+							<ul class="momo resetList"<?php $this->html( 'userlangattributes' ) ?>>
+								<?php
+								$viewsNum = count($readEdit);
+								for ($ii = 2; $ii < $viewsNum; $ii++) {
+								echo $readEdit[$ii]; // views array variable length
+								}
+								foreach ( $this->data['action_urls'] as $key => $item ) {
+									echo "\t\t\t\t\t\t\t\t" . $this->makeListItem( $key, $item ) . "\n";
+								}
+								?>
+							</ul>
+						</div>
+						<!-- did have 'back to page' here but caused problems and not good -->
 					</div>
 					<?php
 					break;
