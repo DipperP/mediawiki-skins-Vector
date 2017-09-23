@@ -156,7 +156,7 @@ class VectorTemplate extends BaseTemplate {
 							?>
 							<div id="contentSub"<?php $this->html( 'userlangattributes' ) ?>>
 								<a class="resetList <?=$this->data['view_urls']['view']['class']?>" 
-								href="<? $this->data['view_urls']['view']['href'] ?>">← Back to page</a> 
+								href="<? $this->data['view_urls']['view']['href'] ?>">← Back to page</a> | 
 								<?php
 								$this->html( 'subtitle' )?>
 							</div>
